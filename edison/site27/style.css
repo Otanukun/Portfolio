@@ -1,20 +1,19 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.demo {
+.demo{
     height: 100vh;
     width: 100%;
 }
 
-.demo model-viewer {
+.demo model-viewer{
     width: 100%;
     height: 100%;
 }
 
-.btn-container {
+.btn-container{
     position: absolute;
     bottom: 50px;
     width: 100%;
@@ -25,12 +24,17 @@
     transition: 1s;
 }
 
-.btn-container .hide {
+.btn-container.hide{
     opacity: 0;
     visibility: hidden;
 }
 
-.demo .btn-container button {
+.demo .btn-container.hide button{
+    font-size: 5px;
+    background: transparent;
+}
+
+.demo .btn-container button{
     border: none;
     border-radius: 5px;
     background: #edda73;
@@ -44,16 +48,11 @@
     transition: 1s;
 }
 
-.demo .btn-container .hide button {
-    font-size: 5px;
-    background: transparent;
-}
-
-.demo .hideBtn {
+.demo .hideBtn{
     position: absolute;
     border: none;
-    border-radius: 5px;
     background: #edda73;
+    border-radius: 5px;
     height: 40px;
     width: 150px;
     cursor: pointer;
