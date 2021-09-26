@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Robot</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <div class="demo">
+        <model-viewer 
+        id="model" 
+        src="RobotExpressive.glb" 
+        auto-rotate
+        camera-controls
+        animation-name="Dance"
+        autoplay
+        skybox-image="kloofendal_38d_partly_cloudy_2k.hdr"
+        >
+        </model-viewer>
         <div class="btn-container">
             <button>Idle</button>
             <button>Dance</button>
@@ -28,13 +39,36 @@
         <button class="hideBtn">Hide</button>
     </div>
     <script>
+        const highBtn = document.querySelector('.hideBtn');
+        highBtn.onclick = () => {
+            document
+                .querySelector('.btn-container')
+                .classList
+                .toggle('hide');
+
+            if(hideBtn.innerHTML == 'Hide') {
+               hideBtn.innerHTML = 'Show';
+            } else {
+                hideBtn.innerHTML = 'Hide';
             }
         }
+    
         const modelViewer = document.querySelector('#model');
+        //3
+        const animBtn = document.querySelectorAll('.btn-container button')
         animBtn.forEach(btn => {
             btn.onclick = () => {
+                modelViewer.animationName = btn.innerHTML; 
             }
         });
+
+
+        function Anim(e) {
+            modelViewer
+        }
+
+
     </script>
+
 </body>
 </html>
